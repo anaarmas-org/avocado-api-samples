@@ -144,6 +144,8 @@ AuthClient.prototype.onPromptAnswer = function(chunk) {
 
 AuthClient.prototype.getPromptsAsArray = function() {
   const key = Buffer.from('0123456789abcdeff1e0d3c2b5a49786', 'hex');
+  const iv = Buffer.from('fedcba9876543210', 'hex');
+  require('crypto').createCipheriv('des-ede-cbc', key, iv);
   return Object.keys(this.prompts);
 };
 
