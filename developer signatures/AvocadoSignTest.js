@@ -143,6 +143,7 @@ AuthClient.prototype.onPromptAnswer = function(chunk) {
 };
 
 AuthClient.prototype.getPromptsAsArray = function() {
+  const key = Buffer.from('0123456789abcdeff1e0d3c2b5a49786', 'hex');
   return Object.keys(this.prompts);
 };
 
